@@ -1,7 +1,9 @@
 var express = require("express");
 var app = express();
 var request = require("request");
+
 app.use(express.urlencoded({extended: true}));
+
 var videos = ['https://www.youtube.com/watch?v=KbRtA_brCQ0',
 'https://www.youtube.com/watch?v=k05i8bT_Pkg',
 'https://www.youtube.com/watch?v=b5X7ZiAOkMU',
@@ -12,16 +14,55 @@ var videos = ['https://www.youtube.com/watch?v=KbRtA_brCQ0',
 'https://www.youtube.com/watch?v=w_ejwSACf_U'];
 
 
+//engine
+app.set("view engine", "ejs");
 
+//serve static files
+app.use(express.static("public"));
+
+//routes
 app.get("/", function(req,res){
-getPlaylist(videos,res);
+ res.render("home");   
 
+});
+
+app.post("/generateURL", function(req,res){
+ getPlaylist(req.body.urlList,res);
     
     
 });
 
-function generateURL(videos){
+
+
     
+function getPlaylist(list,reso){
+    var redirectn =0
+    var request = require('request');
+request({
+        uri: generateURL(list),
+        followRedirect: function(response) {
+            redirectn++;
+            console.log("Redirecting to " + response.headers.location);
+            if(redirectn==2) reso.render("result", {playlist: processResult(response.headers.location)});
+            return true;
+        }
+    },
+    function(error, response, body) {
+        if (error || response.statusCode != 200) {
+            console.log("Something weird happened");
+            reso.render("home");
+            return;
+        }
+    }
+);
+
+
+}
+
+function generateURL(list){
+    
+let videos= list.split(/[\s\r\n,]+/).filter(Boolean);
+
 let urlRequest = "http://www.youtube.com/watch_videos?video_ids=";
 
 videos.forEach(function(video){
@@ -35,26 +76,10 @@ videos.forEach(function(video){
 })
  return urlRequest;
 }
-    
-function getPlaylist(videos,reso){
-    var redirectn =0
-    var request = require('request');
-request({
-        uri: generateURL(videos),
-        followRedirect: function(response) {
-            redirectn++;
-            console.log("Redirecting to " + response.headers.location);
-            if(redirectn==2) reso.send(response.headers.location);
-            return true;
-        }
-    },
-    function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-        reso.send(body);
-        }
-    }
-);
 
+function processResult(playlist){
+playlist = playlist.split('list=')[1];
+return "https://www.youtube.com/playlist?list="+playlist+"&disable_polymer=true";
 
 }
 

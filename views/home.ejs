@@ -1,0 +1,14 @@
+<% include partials/header%>
+
+<h1>Generate a youtube playlist from a list of video URLs</h1>
+
+<div>
+    <h3>One URL per line or separated by comma</h3>
+ <form action="/generateURL" method="POST">
+    <textarea name="urlList" placeholder="Enter URLs">  </textarea>
+    <button>Submit</button>
+    
+ </form>
+</div>
+
+<% include partials/footer%>
