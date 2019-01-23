@@ -1,1 +1,1 @@
-Generates a youtube playlist from a list of video URLS
+# Generates a youtube playlist from a list of URLs
