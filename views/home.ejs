@@ -1,14 +1,24 @@
 <% include partials/header%>
 
+<div class="jumbotron">
 <h1>Generate a youtube playlist from a list of video URLs</h1>
-
-<div>
-    <h3>One URL per line or separated by comma</h3>
- <form action="/generateURL" method="POST">
-    <textarea name="urlList" placeholder="Enter URLs">  </textarea>
-    <button>Submit</button>
+</div>
+<div class="container">
     
- </form>
+<form action="/generateURL" method="POST">
+  <div class="form-group">
+    <label for="inputText">One URL per line or separated by comma</label>
+    <textarea name="urlList" rows="5" class="form-control" id="inputText" placeholder="Enter URLs"> </textarea>
+  </div>
+     <button type="submit" class="btn btn-info">Submit</button>
+</form>
+    
+    
+    
+    
+   
+    
+
 </div>
 
 <% include partials/footer%>

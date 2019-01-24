@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/aeciorc/playlist-maker#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "request": "^2.88.0"
   }

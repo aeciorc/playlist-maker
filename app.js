@@ -27,7 +27,9 @@ app.get("/", function(req,res){
 });
 
 app.post("/generateURL", function(req,res){
+ if (req.body.urlList != undefined)    
  getPlaylist(req.body.urlList,res);
+ else res.send("Error 1");
     
     
 });
