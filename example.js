@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var request = require("request");
-var playlistMaker = require('../index');
+var playlistMaker = require('./index');
 
 app.use(express.urlencoded({extended: true}));
 
