@@ -1,5 +1,5 @@
 
-##playlist-maker
+## playlist-maker
 
  A simple node.js module to generate a youtube playlist from a string of whitespace or comma separated video URLs
 
@@ -20,6 +20,7 @@ playlistMaker.getPlaylist(videos, function(result){
 
 #### Example:
 See:
-https://github.com/aeciorc/playlist-maker/tree/test-deploy
+- https://github.com/aeciorc/playlist-maker/tree/test-deploy
+
 Or see it running here:
-https://aeciorc-pmaker.herokuapp.com/
+- https://aeciorc-pmaker.herokuapp.com/
