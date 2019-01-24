@@ -1,7 +1,7 @@
 {
   "name": "playlist-maker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generate a youtube playlist from a string with URLs",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/aeciorc/playlist-maker#readme",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
     "request": "^2.88.0"
   }
 }
