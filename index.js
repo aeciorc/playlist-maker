@@ -75,12 +75,3 @@ return "https://www.youtube.com/playlist?list="+playlist+"&disable_polymer=true"
 
 
 
-//testing:
-
-
-var videos = "https://www.youtube.com/watch?v=KbRtA_brCQ0,https://www.youtube.com/watch?v=k05i8bT_Pkg,https://www.youtube.com/watch?v=b5X7ZiAOkMU";
-
-exports.getPlaylist(videos, function(result){
-    console.log("got this:",result);
-});
-
