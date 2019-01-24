@@ -7,14 +7,30 @@
     
 <form action="/generateURL" method="POST">
   <div class="form-group">
-    <label for="inputText">One URL per line or separated by comma</label>
+    <label class="lead" for="inputText">One URL per line or separated by comma</label>
+    
+    <%
+    if (error!="" && error!=null && error != undefined) { %>
+    <div class="alert alert-danger alert-dismissible fade show"> <%=error %> </div>
+    <%  }%>
+    
+    
     <textarea name="urlList" rows="5" class="form-control" id="inputText" placeholder="Enter URLs"> </textarea>
   </div>
      <button type="submit" class="btn btn-info">Submit</button>
 </form>
     
     
-    
+    <br>
+  <p><i> Example input:</i></p>
+  
+<p>
+  <i>
+ https://www.youtube.com/watch?v=KbRtA_brCQ0,
+https://www.youtube.com/watch?v=k05i8bT_Pkg,
+https://www.youtube.com/watch?v=b5X7ZiAOkMU
+</i>
+</p>
     
    
     
