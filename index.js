@@ -4,7 +4,7 @@ var exports = module.exports  = {};
  * 
  *@params: 
  * list : a String of URLs separated by space, newline or commma
- * reso: resource object from an Express's route
+ * callback: your callback function
  * 
  */
 exports.getPlaylist =function(list, callback){
