@@ -5,15 +5,6 @@ var playlistMaker = require('./index');
 
 app.use(express.urlencoded({extended: true}));
 
-var videos = ['https://www.youtube.com/watch?v=KbRtA_brCQ0',
-'https://www.youtube.com/watch?v=k05i8bT_Pkg',
-'https://www.youtube.com/watch?v=b5X7ZiAOkMU',
-'https://www.youtube.com/watch?v=kHLHSlExFis',
-'https://www.youtube.com/watch?v=8-mloCL49vs',
-'https://www.youtube.com/watch?v=d6U_t524N0Q',
-'https://www.youtube.com/watch?v=1BYr1br2Ee4',
-'https://www.youtube.com/watch?v=w_ejwSACf_U'];
-
 
 //engine
 app.set("view engine", "ejs");
