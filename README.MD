@@ -24,3 +24,6 @@ See:
 
 Or see it running here:
 - https://aeciorc-pmaker.herokuapp.com/
+
+---
+##### based on this answer: https://webapps.stackexchange.com/a/106340
